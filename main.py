@@ -21,7 +21,7 @@ RISK_REWARD = 2.0        # نسبت حد سود به حد ضرر
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
-BINANCE_KLINES_URL = "https://api.binance.com/api/v3/klines"
+BINANCE_KLINES_URL = "https://data-api.binance.vision/api/v3/klines"
 FEAR_GREED_URL = "https://api.alternative.me/fng/?limit=1"
 
 
