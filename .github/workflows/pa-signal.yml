@@ -1,0 +1,31 @@
+name: PA Signal Bot
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests numpy pandas
+
+      - name: Run price action bot
+        env:
+          PA_TELEGRAM_TOKEN: ${{ secrets.PA_TELEGRAM_TOKEN }}
+          PA_TELEGRAM_CHAT_ID: ${{ secrets.PA_TELEGRAM_CHAT_ID }}
+          CAPITAL_USD: "100"
+          RISK_PERCENT: "1.5"
+          MARGIN_ALLOCATION_PERCENT: "20"
+          MAX_LEVERAGE: "10"
+        run: python pa_bot.py
