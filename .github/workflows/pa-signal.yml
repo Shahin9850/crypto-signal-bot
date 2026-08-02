@@ -1,31 +1,42 @@
-name: PA Signal Bot
+name: Price Action Bot
 
 on:
   schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch: {}
+    - cron: "*/15 * * * *"   # هر ۱۵ دقیقه (زمان‌بندی GitHub می‌تواند چند دقیقه تاخیر داشته باشد)
+  workflow_dispatch: {}       # امکان اجرای دستی از تب Actions در گیت‌هاب
+
+permissions:
+  contents: write            # برای اینکه خود ورک‌فلو بتواند weights.json و signals_log.json را کامیت کند
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests numpy pandas
+        run: pip install pandas numpy requests
 
-      - name: Run price action bot
+      - name: Run bot
         env:
           PA_TELEGRAM_TOKEN: ${{ secrets.PA_TELEGRAM_TOKEN }}
           PA_TELEGRAM_CHAT_ID: ${{ secrets.PA_TELEGRAM_CHAT_ID }}
-          CAPITAL_USD: "100"
-          RISK_PERCENT: "1.5"
-          MARGIN_ALLOCATION_PERCENT: "20"
-          MAX_LEVERAGE: "10"
-        run: python pa_bot.py
+          CAPITAL_USD: ${{ secrets.CAPITAL_USD }}
+          RISK_PERCENT: ${{ secrets.RISK_PERCENT }}
+          MARGIN_ALLOCATION_PERCENT: ${{ secrets.MARGIN_ALLOCATION_PERCENT }}
+          MAX_LEVERAGE: ${{ secrets.MAX_LEVERAGE }}
+        run: python price_action_bot.py
+
+      - name: Commit updated memory files (weights / log / offset)
+        run: |
+          git config user.name "price-action-bot"
+          git config user.email "actions@github.com"
+          git add weights.json signals_log.json telegram_offset.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "به‌روزرسانی خودکار حافظه ربات [skip ci]"
+          git push
