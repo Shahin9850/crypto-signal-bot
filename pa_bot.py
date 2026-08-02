@@ -1,6 +1,7 @@
 """
 ربات سیگنال‌دهی بر پایه پرایس‌اکشن خالص (بدون اندیکاتور)
-شامل: ساختار بازار (BOS/CHoCH)، الگوهای کندلی، مناطق عرضه/تقاضا، Liquidity Grab
+شامل: ساختار بازار (BOS/CHoCH)، الگوهای کندلی، مناطق عرضه/تقاضا،
+Order Block، Liquidity Grab
 + محاسبه دقیق حجم معامله، اهرم و ریسک بر اساس سرمایه مشخص‌شده
 
 منبع قیمت: Binance Public Data Mirror (بدون نیاز به API Key)
@@ -143,6 +144,25 @@ def find_supply_demand_zone(df: pd.DataFrame, lookback: int = 40):
     return ("supply", last_strong["low"], last_strong["high"])
 
 
+def find_order_block(df: pd.DataFrame, lookback: int = 40):
+    """
+    Order Block: آخرین کندل مخالفِ جهت حرکت، درست قبل از یک کندل ایمپالسیو قوی.
+    نشانه‌ی ورود پول هوشمند (Smart Money) قبل از یک حرکت بزرگ است.
+    """
+    recent = df.tail(lookback).reset_index(drop=True).copy()
+    recent["body"] = (recent["close"] - recent["open"]).abs()
+    avg_body = recent["body"].mean()
+    for i in range(len(recent) - 1, 0, -1):
+        candle = recent.iloc[i]
+        prev = recent.iloc[i - 1]
+        if candle["body"] > 1.5 * avg_body:
+            if candle["close"] > candle["open"] and prev["close"] < prev["open"]:
+                return ("bullish_ob", prev["low"], prev["high"])
+            if candle["close"] < candle["open"] and prev["close"] > prev["open"]:
+                return ("bearish_ob", prev["low"], prev["high"])
+    return None
+
+
 def price_in_zone(price: float, zone) -> bool:
     if zone is None:
         return False
@@ -172,40 +192,40 @@ def analyze_price_action(symbol: str):
     bull, bear = 0.0, 0.0
     reasons = []
 
-    # ۱. ساختار بازار در تایم‌فریم ۴ ساعته (وزن ۳۰)
+    # ۱. ساختار بازار در تایم‌فریم ۴ ساعته (وزن ۲۵)
     trend4h, _, _ = market_structure_trend(df4h)
     if trend4h == "bull":
-        bull += 30
+        bull += 25
         reasons.append("ساختار بازار (۴ساعته): سقف/کف‌های بالاتر (روند صعودی)")
     elif trend4h == "bear":
-        bear += 30
+        bear += 25
         reasons.append("ساختار بازار (۴ساعته): سقف/کف‌های پایین‌تر (روند نزولی)")
 
-    # ۲. تایید شکست ساختار (BOS/CHoCH) در ۱ ساعته (وزن ۲۵)
+    # ۲. تایید شکست ساختار (BOS/CHoCH) در ۱ ساعته (وزن ۲۰)
     trend1h, _, _ = market_structure_trend(df1h)
     bos = detect_bos_choch(df1h, trend1h if trend1h != "range" else trend4h)
     if bos == "bull_bos":
-        bull += 25
+        bull += 20
         reasons.append("شکست ساختار صعودی (BOS) در ۱ساعته - ادامه روند")
     elif bos == "bear_bos":
-        bear += 25
+        bear += 20
         reasons.append("شکست ساختار نزولی (BOS) در ۱ساعته - ادامه روند")
     elif bos == "bull_choch":
-        bull += 15
+        bull += 12
         reasons.append("نشانه تغییر روند به صعودی (CHoCH) در ۱ساعته")
     elif bos == "bear_choch":
-        bear += 15
+        bear += 12
         reasons.append("نشانه تغییر روند به نزولی (CHoCH) در ۱ساعته")
 
-    # ۳. الگوی کندلی در ۱ساعته یا ۱۵دقیقه (وزن ۲۰)
+    # ۳. الگوی کندلی در ۱ساعته یا ۱۵دقیقه (وزن ۱۵)
     candle_1h = detect_candle_pattern(df1h)
     candle_15m = detect_candle_pattern(df15m)
     if candle_1h in ("bullish_engulfing", "bullish_pin") or candle_15m in ("bullish_engulfing", "bullish_pin"):
-        bull += 20
+        bull += 15
         pat = candle_15m if candle_15m in ("bullish_engulfing", "bullish_pin") else candle_1h
         reasons.append(f"الگوی کندلی صعودی شناسایی شد ({pat})")
     elif candle_1h in ("bearish_engulfing", "bearish_pin") or candle_15m in ("bearish_engulfing", "bearish_pin"):
-        bear += 20
+        bear += 15
         pat = candle_15m if candle_15m in ("bearish_engulfing", "bearish_pin") else candle_1h
         reasons.append(f"الگوی کندلی نزولی شناسایی شد ({pat})")
 
@@ -220,7 +240,17 @@ def analyze_price_action(symbol: str):
             bear += 15
             reasons.append("قیمت داخل منطقه عرضه (Supply Zone)")
 
-    # ۵. Liquidity Grab / شکار استاپ (وزن ۱۰)
+    # ۵. موقعیت قیمت نسبت به Order Block (وزن ۱۵)
+    ob = find_order_block(df1h)
+    if ob and price_in_zone(price, ob):
+        if ob[0] == "bullish_ob":
+            bull += 15
+            reasons.append("قیمت داخل Order Block صعودی (ورود احتمالی پول هوشمند)")
+        else:
+            bear += 15
+            reasons.append("قیمت داخل Order Block نزولی (ورود احتمالی پول هوشمند)")
+
+    # ۶. Liquidity Grab / شکار استاپ (وزن ۱۰)
     grab_1h = detect_liquidity_grab(df1h)
     grab_15m = detect_liquidity_grab(df15m)
     if grab_1h == "bullish_grab" or grab_15m == "bullish_grab":
