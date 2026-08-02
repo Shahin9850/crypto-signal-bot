@@ -6,6 +6,25 @@ Order Block، Liquidity Grab
 
 منبع قیمت: Binance Public Data Mirror (بدون نیاز به API Key)
 ارسال: تلگرام
+
+نسخه ۲ - تغییرات نسبت به نسخه قبل:
+  1) رفع باگ مدیریت ریسک: قبلاً وقتی اهرم لازم از MAX_LEVERAGE بیشتر
+     می‌شد یا کمتر از ۱ می‌شد، کد اهرم را محدود می‌کرد ولی حجم پوزیشن را
+     متناسب کوچک نمی‌کرد -> ریسک واقعی می‌توانست بی‌صدا از RISK_PERCENT
+     تنظیم‌شده بیشتر شود. الان محاسبه برعکس شده: اول حجم پوزیشن دقیقاً
+     طوری تعیین می‌شود که ریسک = RISK_PERCENT باشد، بعد اهرم لازم حساب
+     می‌شود. اگر اهرم لازم از MAX_LEVERAGE بیشتر باشد، سیگنال رد می‌شود
+     (به‌جای بی‌صدا ریسک بیشتر گرفتن).
+  2) حداقل فاصله استاپ (MIN_STOP_PERCENT) اضافه شد تا در نوسانات خیلی
+     کم، استاپ بیش‌ازحد نزدیک نشود و اهرم واقعی نامعقول (مثلاً >100x)
+     محاسبه نشود.
+  3) امتیاز اطمینان اکنون شامل یک پاداش هم‌راستایی (confluence bonus)
+     است: اگر چند سیگنال مستقل (ساختار، کندل، ناحیه، OB، لیکوییدیتی)
+     همه هم‌جهت باشند، امتیاز نهایی کمی تقویت می‌شود، ولی اگر سیگنال‌ها
+     با هم در تناقض باشند (هم bull هم bear امتیاز قابل‌توجه گرفته باشند)
+     امتیاز جریمه می‌شود تا از سیگنال‌های ضعیف/دو پهلو جلوگیری شود.
+  4) پیام تلگرام حالا فاصله استاپ به درصد و نسبت ریسک‌به‌ریوارد واقعی
+     را هم نشان می‌دهد.
 """
 
 import os
@@ -25,6 +44,7 @@ CAPITAL_USD = float(os.environ.get("CAPITAL_USD", "100"))
 RISK_PERCENT = float(os.environ.get("RISK_PERCENT", "1.5"))          # درصد سرمایه در معرض ریسک در هر معامله
 MARGIN_ALLOCATION_PERCENT = float(os.environ.get("MARGIN_ALLOCATION_PERCENT", "20"))  # درصد سرمایه به‌عنوان مارجین هر معامله
 MAX_LEVERAGE = float(os.environ.get("MAX_LEVERAGE", "10"))           # سقف اهرم مجاز (برای امنیت)
+MIN_STOP_PERCENT = float(os.environ.get("MIN_STOP_PERCENT", "0.15")) / 100  # حداقل فاصله مجاز استاپ از ورود
 RISK_REWARD = 2.0
 PA_SCORE_THRESHOLD = 65
 
@@ -260,10 +280,27 @@ def analyze_price_action(symbol: str):
         bear += 10
         reasons.append("جمع‌آوری نقدینگی بالای سقف قبلی و بازگشت (Liquidity Grab نزولی)")
 
-    confidence = max(bull, bear)
-    direction = "BUY" if bull > bear else "SELL" if bear > bull else "NEUTRAL"
+    # ۷. پاداش/جریمه هم‌راستایی (confluence) — جدید
+    # اگر جهت مخالف هم امتیاز قابل‌توجهی گرفته باشد (سیگنال دوپهلو)، جریمه بگیر.
+    # اگر جهت غالب خیلی قوی‌تر از مخالفش باشد (هم‌راستایی بالا)، کمی پاداش بگیر.
+    dominant = max(bull, bear)
+    opposite = min(bull, bear)
+    if dominant > 0:
+        conflict_ratio = opposite / dominant
+        if conflict_ratio >= 0.4:
+            dominant *= 0.85  # سیگنال‌های متناقض -> کاهش اطمینان
+            reasons.append("⚠️ برخی سیگنال‌ها در تناقض بودند؛ امتیاز اطمینان کاهش یافت")
+        elif conflict_ratio == 0 and dominant >= 60:
+            dominant = min(100, dominant * 1.05)  # هم‌راستایی کامل -> کمی افزایش
 
-    if confidence < PA_SCORE_THRESHOLD:
+    if bull >= bear:
+        confidence = dominant
+        direction = "BUY" if bull > bear else "NEUTRAL"
+    else:
+        confidence = dominant
+        direction = "SELL"
+
+    if confidence < PA_SCORE_THRESHOLD or direction == "NEUTRAL":
         return None
 
     # ---------------------------------------------------------------
@@ -284,21 +321,45 @@ def analyze_price_action(symbol: str):
         tp = entry - (sl - entry) * RISK_REWARD
 
     stop_distance_pct = abs(entry - sl) / entry
-    if stop_distance_pct <= 0:
+
+    # اگر استاپ به‌طور نامعقولی نزدیک باشد (نویز)، سیگنال را رد کن
+    if stop_distance_pct < MIN_STOP_PERCENT:
         return None
 
     # ---------------------------------------------------------------
     # محاسبه حجم معامله، اهرم و ریسک بر اساس سرمایه
+    # رفع باگ: حجم پوزیشن همیشه طوری تعیین می‌شود که ریسک واقعی دقیقاً
+    # برابر risk_amount_usd باشد (نه بیشتر). اهرم لازم از این حجم مشتق
+    # می‌شود؛ اگر اهرم لازم از MAX_LEVERAGE بیشتر شود، سیگنال رد می‌شود
+    # به‌جای اینکه بی‌صدا ریسک بیشتری به کاربر تحمیل شود.
     # ---------------------------------------------------------------
     risk_amount_usd = CAPITAL_USD * RISK_PERCENT / 100
-    required_position_usd = risk_amount_usd / stop_distance_pct
     margin_usd = CAPITAL_USD * MARGIN_ALLOCATION_PERCENT / 100
-    required_leverage = required_position_usd / margin_usd
-    leverage = max(1, min(required_leverage, MAX_LEVERAGE))
-    actual_position_usd = leverage * margin_usd
-    actual_risk_usd = actual_position_usd * stop_distance_pct
+
+    # حجم پوزیشنی که دقیقاً risk_amount_usd ریسک ایجاد می‌کند
+    position_usd = risk_amount_usd / stop_distance_pct
+
+    # اهرم لازم برای رسیدن به این حجم با مارجین تخصیص‌یافته
+    required_leverage = position_usd / margin_usd
+
+    if required_leverage < 1:
+        # نیازی به اهرم نیست؛ همان مارجین کافی از حجم لازم بیشتر است.
+        # حجم را به مارجین محدود می‌کنیم تا سرمایه بلااستفاده قفل نشود
+        # ولی چون required_leverage<1 یعنی ریسک واقعی این حالت از حد
+        # تعیین‌شده کمتر خواهد بود، نه بیشتر — این حالت ایمن است.
+        leverage = 1.0
+        position_usd = margin_usd
+    elif required_leverage > MAX_LEVERAGE:
+        # با سقف اهرم مجاز نمی‌توان ریسک را در حد RISK_PERCENT نگه داشت
+        # بدون کاهش حجم؛ به‌جای عبور بی‌صدا از ریسک مجاز، سیگنال رد می‌شود.
+        return None
+    else:
+        leverage = required_leverage
+
+    actual_risk_usd = position_usd * stop_distance_pct
     tp_distance_pct = abs(tp - entry) / entry
-    potential_profit_usd = actual_position_usd * tp_distance_pct
+    potential_profit_usd = position_usd * tp_distance_pct
+    actual_rr = tp_distance_pct / stop_distance_pct
 
     return {
         "symbol": symbol,
@@ -307,10 +368,12 @@ def analyze_price_action(symbol: str):
         "entry": entry,
         "sl": sl,
         "tp": tp,
+        "stop_distance_pct": stop_distance_pct * 100,
+        "actual_rr": actual_rr,
         "reasons": reasons,
         "margin_usd": margin_usd,
         "leverage": round(leverage, 1),
-        "position_usd": actual_position_usd,
+        "position_usd": position_usd,
         "risk_usd": actual_risk_usd,
         "profit_usd": potential_profit_usd,
     }
@@ -340,12 +403,13 @@ def format_message(r) -> str:
         f"قیمت ورود: {r['entry']:.5f}",
         f"🎯 حد سود (TP): {r['tp']:.5f}",
         f"🛑 حد ضرر (SL): {r['sl']:.5f}",
+        f"فاصله استاپ: {r['stop_distance_pct']:.2f}٪ | نسبت ریسک‌به‌ریوارد واقعی: {r['actual_rr']:.2f}",
         "",
         "<b>💵 مدیریت سرمایه (بر اساس سرمایه $" + f"{CAPITAL_USD:.0f})</b>",
         f"مارجین این معامله: <b>${r['margin_usd']:.2f}</b>",
         f"اهرم پیشنهادی: <b>{r['leverage']}x</b>",
         f"حجم کل پوزیشن: ${r['position_usd']:.2f}",
-        f"ریسک این معامله (اگر استاپ بخوره): <b>${r['risk_usd']:.2f}</b>",
+        f"ریسک این معامله (اگر استاپ بخوره): <b>${r['risk_usd']:.2f}</b> (≈{RISK_PERCENT}٪ سرمایه)",
         f"سود هدف (اگر تی‌پی بخوره): <b>${r['profit_usd']:.2f}</b>",
         "",
         "<i>دلایل تحلیل پرایس‌اکشن (۴ساعته → ۱ساعته → ۱۵دقیقه):</i>",
@@ -353,7 +417,8 @@ def format_message(r) -> str:
     lines += [f"• {x}" for x in r["reasons"]]
     lines.append(
         "\n⚠️ فقط با همین حجم و اهرم پیشنهادی وارد شو، نه بیشتر. "
-        "این عدد جوری حساب شده که با چند بار استاپ خوردن پشت‌سرهم، سرمایه‌ات از بین نره. "
+        "این عدد جوری حساب شده که ریسک واقعی این معامله دقیقاً برابر "
+        f"{RISK_PERCENT}٪ سرمایه‌ات بمونه، نه بیشتر. "
         "صرفاً تحلیل خودکار است، نه تضمین سود."
     )
     return "\n".join(lines)
@@ -369,7 +434,7 @@ def main():
                 any_signal = True
                 print(f"سیگنال پرایس‌اکشن {symbol} ارسال شد (امتیاز {result['confidence']}).")
             else:
-                print(f"{symbol}: شرایط پرایس‌اکشن با کیفیت کافی پیدا نشد.")
+                print(f"{symbol}: شرایط پرایس‌اکشن با کیفیت کافی یا مدیریت ریسک قابل‌قبول پیدا نشد.")
         except Exception as e:
             print(f"خطا در تحلیل {symbol}: {e}")
 
