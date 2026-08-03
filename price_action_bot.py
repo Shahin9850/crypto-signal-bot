@@ -43,11 +43,23 @@ SYMBOLS = [
     "DOGEUSDT", "TRXUSDT", "ADAUSDT", "LINKUSDT", "AVAXUSDT",
 ]
 
-CAPITAL_USD = float(os.environ.get("CAPITAL_USD", "100"))
-RISK_PERCENT = float(os.environ.get("RISK_PERCENT", "1.5"))
-MARGIN_ALLOCATION_PERCENT = float(os.environ.get("MARGIN_ALLOCATION_PERCENT", "20"))
-MAX_LEVERAGE = float(os.environ.get("MAX_LEVERAGE", "10"))
-MIN_STOP_PERCENT = float(os.environ.get("MIN_STOP_PERCENT", "0.15")) / 100
+def env_float(name: str, default: str) -> float:
+    """مثل os.environ.get ولی اگر مقدار موجود ولی رشته خالی باشد
+    (مثلاً یک Secret گیت‌هاب که ساخته نشده)، همان مقدار پیش‌فرض را برمی‌گرداند."""
+    val = os.environ.get(name, "").strip()
+    return float(val) if val else float(default)
+
+
+def env_int(name: str, default: str) -> int:
+    val = os.environ.get(name, "").strip()
+    return int(val) if val else int(default)
+
+
+CAPITAL_USD = env_float("CAPITAL_USD", "100")
+RISK_PERCENT = env_float("RISK_PERCENT", "1.5")
+MARGIN_ALLOCATION_PERCENT = env_float("MARGIN_ALLOCATION_PERCENT", "20")
+MAX_LEVERAGE = env_float("MAX_LEVERAGE", "10")
+MIN_STOP_PERCENT = env_float("MIN_STOP_PERCENT", "0.15") / 100
 RISK_REWARD = 2.0
 PA_SCORE_THRESHOLD = 65
 
@@ -60,8 +72,8 @@ BINANCE_KLINES_URL = "https://data-api.binance.vision/api/v3/klines"
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WEIGHTS_PATH = os.environ.get("WEIGHTS_PATH", os.path.join(BASE_DIR, "weights.json"))
 SIGNALS_LOG_PATH = os.environ.get("SIGNALS_LOG_PATH", os.path.join(BASE_DIR, "signals_log.json"))
-MIN_SAMPLES = int(os.environ.get("MIN_SAMPLES", "15"))
-MAX_ADJUST_PER_CYCLE = float(os.environ.get("MAX_ADJUST_PER_CYCLE", "1.5"))
+MIN_SAMPLES = env_int("MIN_SAMPLES", "15")
+MAX_ADJUST_PER_CYCLE = env_float("MAX_ADJUST_PER_CYCLE", "1.5")
 MIN_WEIGHT = 5.0
 MAX_WEIGHT = 35.0
 MAX_PENDING_AGE_HOURS = 72
