@@ -80,6 +80,7 @@ MAX_PENDING_AGE_HOURS = 72
 
 OFFSET_PATH = os.environ.get("OFFSET_PATH", os.path.join(BASE_DIR, "telegram_offset.json"))
 COMMAND_KEYWORDS = ("وضعیت", "status", "/status", "گزارش")
+START_KEYWORDS = ("/start", "start", "شروع")
 
 DEFAULT_WEIGHTS = {
     "structure_4h": 25.0,
@@ -597,6 +598,14 @@ def check_and_reply_commands(weights: dict, log: list):
 
         if TELEGRAM_CHAT_ID and chat_id != str(TELEGRAM_CHAT_ID):
             continue  # فقط به چت مجاز پاسخ بده
+
+        if text in START_KEYWORDS:
+            send_telegram_message(
+                "👋 سلام! ربات پرایس‌اکشن روشن و متصله.\n"
+                "هر وقت یک ستاپ باکیفیت پیدا کنه، اینجا سیگنال می‌فرستم.\n"
+                "برای دیدن آمار سیگنال‌ها و وزن فاکتورها، کلمه «وضعیت» یا «گزارش» رو بفرست."
+            )
+            continue
 
         if any(kw in text for kw in COMMAND_KEYWORDS):
             wins = sum(1 for s in log if s.get("status") == "win")
