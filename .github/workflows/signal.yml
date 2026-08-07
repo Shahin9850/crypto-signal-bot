@@ -5,6 +5,9 @@ on:
     - cron: "*/15 * * * *"
   workflow_dispatch: {}
 
+permissions:
+  contents: write
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
@@ -25,3 +28,16 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python main.py
+
+      - name: Save signal tracking data
+        run: |
+          mkdir -p data
+          git config user.name "signal-bot"
+          git config user.email "actions@github.com"
+          git add data/
+          if ! git diff --cached --quiet; then
+            git commit -m "Update signal tracking data [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
