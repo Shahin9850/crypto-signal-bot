@@ -1,14 +1,15 @@
 """
-ربات تحلیل و سیگنال‌دهی ارز دیجیتال (نسخه پیشرفته)
-- سیگنال فیوچرز: تحلیل چندتایم‌فریمی (روند ۴ ساعته → تایید ۱ ساعته → ورود ۱۵ دقیقه‌ای)
+ربات تحلیل و سیگنال‌دهی ارز دیجیتال (نسخه پیشرفته + پیگیری نتیجه سیگنال‌ها)
+- سیگنال فیوچرز: تحلیل چندتایم‌فریمی (روند ۴ ساعته → تایید ۱ ساعته → ورود ۱۵ دقیقه)
 - سیگنال اسپات: مناسب خرید/نگهداری هفتگی، بر پایه تایم‌فریم روزانه
-- امتیازدهی از ۱۰۰؛ زیر آستانه مشخص، سیگنالی ارسال نمی‌شود
+- پیگیری خودکار: بعد از هر سیگنال فیوچرز، ربات چک می‌کند TP خورده یا SL
+- دستورات تلگرام: "وضعیت" (گزارش امروز) و "وضعیت ماهانه" (گزارش ۳۰ روز اخیر)
 منبع قیمت: Binance Public Data Mirror (بدون نیاز به API Key)
-ارسال: تلگرام
 """
 
 import os
-from datetime import datetime, timezone
+import json
+from datetime import datetime, timedelta, timezone
 
 import requests
 import numpy as np
@@ -20,15 +21,37 @@ import pandas as pd
 SYMBOLS = ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "XRPUSDT"]
 RISK_REWARD = 2.0
 
-FUTURES_SCORE_THRESHOLD = 65   # زیر این امتیاز، سیگنال فیوچرز ارسال نمی‌شود
-SPOT_SCORE_THRESHOLD = 65      # زیر این امتیاز، سیگنال اسپات ارسال نمی‌شود
-SPOT_CHECK_EVERY_HOURS = 6     # تحلیل اسپات هر چند ساعت یک‌بار انجام شود (دید هفتگی، نیازی به هر ۱۵ دقیقه نیست)
+FUTURES_SCORE_THRESHOLD = 65
+SPOT_SCORE_THRESHOLD = 65
+SPOT_CHECK_EVERY_HOURS = 6
 
 TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID")
 
 BINANCE_KLINES_URL = "https://data-api.binance.vision/api/v3/klines"
 FEAR_GREED_URL = "https://api.alternative.me/fng/?limit=1"
+
+LOG_PATH = "data/signals_log.json"
+OFFSET_PATH = "data/telegram_offset.json"
+
+
+# ---------------------------------------------------------------
+# ذخیره‌سازی ساده (فایل JSON)
+# ---------------------------------------------------------------
+def load_json(path, default):
+    if os.path.exists(path):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            return default
+    return default
+
+
+def save_json(path, data):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
 
 
 # ---------------------------------------------------------------
@@ -112,7 +135,7 @@ def get_fear_greed_index():
 
 
 # ---------------------------------------------------------------
-# تحلیل فیوچرز: چندتایم‌فریمی (۴ ساعته -> ۱ ساعته -> ۱۵ دقیقه)
+# تحلیل فیوچرز: چندتایم‌فریمی
 # ---------------------------------------------------------------
 def analyze_futures(symbol: str, fng_value):
     df4h = add_indicators(fetch_klines(symbol, "4h", 100))
@@ -126,7 +149,6 @@ def analyze_futures(symbol: str, fng_value):
     bull, bear = 0.0, 0.0
     reasons = []
 
-    # ۱. روند اصلی روی تایم‌فریم ۴ ساعته (وزن ۳۰)
     if last4h["ema20"] > last4h["ema50"]:
         bull += 30
         reasons.append("روند اصلی (۴ساعته) صعودی")
@@ -134,7 +156,6 @@ def analyze_futures(symbol: str, fng_value):
         bear += 30
         reasons.append("روند اصلی (۴ساعته) نزولی")
 
-    # ۲. تایید روند روی ۱ ساعته (وزن ۲۰)
     if last1h["ema20"] > last1h["ema50"]:
         bull += 20
         reasons.append("روند میان‌مدت (۱ساعته) صعودی")
@@ -142,7 +163,6 @@ def analyze_futures(symbol: str, fng_value):
         bear += 20
         reasons.append("روند میان‌مدت (۱ساعته) نزولی")
 
-    # ۳. RSI روی ۱ ساعته (وزن ۱۵)
     if last1h["rsi"] < 35:
         bull += 15
         reasons.append(f"RSI یک‌ساعته در ناحیه اشباع فروش ({last1h['rsi']:.1f})")
@@ -150,7 +170,6 @@ def analyze_futures(symbol: str, fng_value):
         bear += 15
         reasons.append(f"RSI یک‌ساعته در ناحیه اشباع خرید ({last1h['rsi']:.1f})")
 
-    # ۴. MACD روی ۱ ساعته (وزن ۱۵)
     if last1h["macd"] > last1h["macd_signal"]:
         bull += 15
         reasons.append("MACD یک‌ساعته مثبت")
@@ -158,7 +177,6 @@ def analyze_futures(symbol: str, fng_value):
         bear += 15
         reasons.append("MACD یک‌ساعته منفی")
 
-    # ۵. نقطه ورود دقیق روی ۱۵ دقیقه (وزن ۱۵)
     if last15m["close"] > last15m["ema20"] and last15m["rsi"] > df15m.iloc[-2]["rsi"]:
         bull += 15
         reasons.append("قیمت بالای EMA20 در ۱۵ دقیقه و مومنتوم رو به رشد")
@@ -166,7 +184,6 @@ def analyze_futures(symbol: str, fng_value):
         bear += 15
         reasons.append("قیمت زیر EMA20 در ۱۵ دقیقه و مومنتوم رو به کاهش")
 
-    # ۶. نزدیکی به حمایت/مقاومت کلیدی روی ۱ ساعته (وزن ۵)
     if (price - support) / price < 0.01:
         bull += 5
         reasons.append("قیمت نزدیک حمایت کلیدی")
@@ -183,13 +200,13 @@ def analyze_futures(symbol: str, fng_value):
             reasons.append(f"طمع شدید در بازار ({fng_value})")
 
     confidence = max(bull, bear)
-    direction = "BUY 🟢" if bull > bear else "SELL 🔴" if bear > bull else "NEUTRAL"
+    direction = "BUY" if bull > bear else "SELL" if bear > bull else "NEUTRAL"
 
     if confidence < FUTURES_SCORE_THRESHOLD:
         return None
 
     atr15 = last15m["atr"]
-    if direction.startswith("BUY"):
+    if direction == "BUY":
         sl = price - 1.2 * atr15
         tp = price + 1.2 * atr15 * RISK_REWARD
     else:
@@ -210,7 +227,7 @@ def analyze_futures(symbol: str, fng_value):
 
 
 # ---------------------------------------------------------------
-# تحلیل اسپات: مناسب خرید/نگهداری با دید هفتگی (تایم‌فریم روزانه)
+# تحلیل اسپات
 # ---------------------------------------------------------------
 def analyze_spot(symbol: str, fng_value):
     df1d = add_indicators(fetch_klines(symbol, "1d", 120))
@@ -221,7 +238,6 @@ def analyze_spot(symbol: str, fng_value):
     score = 0.0
     reasons = []
 
-    # ۱. روند بلندمدت (وزن ۳۵)
     if price > last["ema50"] and last["ema20"] > last["ema50"]:
         score += 35
         reasons.append("روند بلندمدت (روزانه) صعودی و قیمت بالای EMA50")
@@ -229,7 +245,6 @@ def analyze_spot(symbol: str, fng_value):
         score += 20
         reasons.append("قیمت بالای EMA50 روزانه (روند نسبتاً مثبت)")
 
-    # ۲. RSI روزانه (وزن ۲۰) - منطقه‌ی مناسب برای خرید، نه اشباع خرید
     if last["rsi"] < 40:
         score += 20
         reasons.append(f"RSI روزانه در محدوده مناسب خرید ({last['rsi']:.1f})")
@@ -237,7 +252,6 @@ def analyze_spot(symbol: str, fng_value):
         score += 10
         reasons.append(f"RSI روزانه خنثی ({last['rsi']:.1f})")
 
-    # ۳. فاصله تا حمایت ۳۰ روزه (وزن ۲۰)
     dist_support = (price - support) / price
     if dist_support < 0.05:
         score += 20
@@ -246,12 +260,10 @@ def analyze_spot(symbol: str, fng_value):
         score += 10
         reasons.append("قیمت در فاصله معقول از حمایت ۳۰ روزه")
 
-    # ۴. MACD روزانه (وزن ۱۵)
     if last["macd"] > last["macd_signal"]:
         score += 15
         reasons.append("MACD روزانه مثبت")
 
-    # ۵. سنتیمنت بازار (وزن ۱۰)
     if fng_value is not None:
         if fng_value <= 35:
             score += 10
@@ -273,6 +285,101 @@ def analyze_spot(symbol: str, fng_value):
 
 
 # ---------------------------------------------------------------
+# پیگیری نتیجه سیگنال‌های قبلی (رسیدن به TP یا خوردن SL)
+# ---------------------------------------------------------------
+def check_open_signals(log: list) -> list:
+    now_iso = datetime.now(timezone.utc).isoformat()
+    for record in log:
+        if record.get("status") != "open":
+            continue
+        try:
+            entry_dt = datetime.fromisoformat(record["timestamp"])
+            entry_ms = int(entry_dt.timestamp() * 1000)
+            df = fetch_klines(record["symbol"], "15m", 500)
+            df = df[df["open_time"] >= entry_ms]
+            for _, candle in df.iterrows():
+                if record["direction"] == "BUY":
+                    if candle["low"] <= record["sl"]:
+                        record["status"] = "loss"
+                        record["closed_time"] = now_iso
+                        break
+                    if candle["high"] >= record["tp"]:
+                        record["status"] = "win"
+                        record["closed_time"] = now_iso
+                        break
+                else:  # SELL
+                    if candle["high"] >= record["sl"]:
+                        record["status"] = "loss"
+                        record["closed_time"] = now_iso
+                        break
+                    if candle["low"] <= record["tp"]:
+                        record["status"] = "win"
+                        record["closed_time"] = now_iso
+                        break
+        except Exception as e:
+            print(f"خطا در بررسی وضعیت سیگنال {record.get('symbol')}: {e}")
+    return log
+
+
+def build_status_summary(log: list, period: str) -> str:
+    now = datetime.now(timezone.utc)
+    if period == "day":
+        cutoff = now.replace(hour=0, minute=0, second=0, microsecond=0)
+        label = "امروز"
+    else:
+        cutoff = now - timedelta(days=30)
+        label = "۳۰ روز اخیر (ماهانه)"
+
+    relevant = [r for r in log if datetime.fromisoformat(r["timestamp"]) >= cutoff]
+    wins = sum(1 for r in relevant if r["status"] == "win")
+    losses = sum(1 for r in relevant if r["status"] == "loss")
+    still_open = sum(1 for r in relevant if r["status"] == "open")
+    closed = wins + losses
+    winrate = (wins / closed * 100) if closed else 0
+
+    return (
+        f"📊 <b>وضعیت سیگنال‌ها | {label}</b>\n\n"
+        f"✅ سود گرفته (TP): {wins}\n"
+        f"🛑 استاپ خورده (SL): {losses}\n"
+        f"⏳ هنوز باز (مشخص نشده): {still_open}\n"
+        f"📈 تعداد کل سیگنال: {len(relevant)}\n"
+        f"🎯 نرخ موفقیت (از بسته‌شده‌ها): {winrate:.1f}%"
+    )
+
+
+# ---------------------------------------------------------------
+# مدیریت دستورات تلگرام (وضعیت / وضعیت ماهانه)
+# ---------------------------------------------------------------
+def get_telegram_updates(offset: int):
+    if not TELEGRAM_TOKEN:
+        return []
+    url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/getUpdates"
+    params = {"offset": offset, "timeout": 0}
+    resp = requests.get(url, params=params, timeout=15)
+    if resp.status_code != 200:
+        return []
+    return resp.json().get("result", [])
+
+
+def process_commands(log: list):
+    offset_data = load_json(OFFSET_PATH, {"offset": 0})
+    updates = get_telegram_updates(offset_data["offset"])
+
+    for update in updates:
+        offset_data["offset"] = update["update_id"] + 1
+        message = update.get("message", {})
+        text = (message.get("text") or "").strip()
+        if not text:
+            continue
+        if "ماهانه" in text:
+            send_telegram_message(build_status_summary(log, "month"))
+        elif "وضعیت" in text:
+            send_telegram_message(build_status_summary(log, "day"))
+
+    save_json(OFFSET_PATH, offset_data)
+
+
+# ---------------------------------------------------------------
 # ارسال پیام به تلگرام
 # ---------------------------------------------------------------
 def send_telegram_message(text: str):
@@ -287,10 +394,11 @@ def send_telegram_message(text: str):
 
 
 def format_futures_message(r, fng_value, fng_label) -> str:
+    direction_fa = "خرید (BUY) 🟢" if r["direction"] == "BUY" else "فروش (SELL) 🔴"
     lines = [
         f"<b>⚡️ سیگنال فیوچرز | {r['symbol']}</b>",
         f"امتیاز اطمینان: <b>{r['confidence']} / 100</b>",
-        f"جهت: <b>{r['direction']}</b>",
+        f"جهت: <b>{direction_fa}</b>",
         f"قیمت ورود: {r['price']:.4f}",
         f"🎯 حد سود: {r['tp']:.4f}",
         f"🛑 حد ضرر: {r['sl']:.4f}",
@@ -302,6 +410,10 @@ def format_futures_message(r, fng_value, fng_label) -> str:
     lines += [f"• {x}" for x in r["reasons"]]
     if fng_value is not None:
         lines.append(f"\n😨/🤑 شاخص ترس و طمع: {fng_value} ({fng_label})")
+    lines.append(
+        "\n📌 این سیگنال ثبت شد و ربات خودش نتیجه‌اش رو پیگیری می‌کنه. "
+        "برای دیدن گزارش، بنویس «وضعیت» یا «وضعیت ماهانه»."
+    )
     lines.append("\n⚠️ صرفاً تحلیل خودکار است، نه توصیه مالی قطعی. مدیریت ریسک را رعایت کنید.")
     return "\n".join(lines)
 
@@ -312,7 +424,7 @@ def format_spot_message(r, fng_value, fng_label) -> str:
         f"امتیاز جذابیت: <b>{r['score']} / 100</b>",
         f"قیمت فعلی: {r['price']:.4f}",
         f"🎯 هدف قیمتی (مقاومت): {r['target']:.4f}",
-        f"⚠️ سطح ابطال تحلیل (زیر این یعنی تحلیل نقض شده): {r['invalidation']:.4f}",
+        f"⚠️ سطح ابطال تحلیل: {r['invalidation']:.4f}",
         "",
         "<i>دلایل تحلیل (تایم‌فریم روزانه):</i>",
     ]
@@ -324,6 +436,14 @@ def format_spot_message(r, fng_value, fng_label) -> str:
 
 
 def main():
+    log = load_json(LOG_PATH, [])
+
+    # ۱. اول وضعیت سیگنال‌های قبلی رو چک کن (TP خورده یا SL)
+    log = check_open_signals(log)
+
+    # ۲. اگه کاربر دستور "وضعیت" یا "وضعیت ماهانه" فرستاده بود، جواب بده
+    process_commands(log)
+
     fng_value, fng_label = get_fear_greed_index()
     current_hour = datetime.now(timezone.utc).hour
     run_spot_check = (current_hour % SPOT_CHECK_EVERY_HOURS == 0)
@@ -337,6 +457,16 @@ def main():
                 send_telegram_message(format_futures_message(futures_result, fng_value, fng_label))
                 any_signal = True
                 print(f"سیگنال فیوچرز {symbol} ارسال شد (امتیاز {futures_result['confidence']}).")
+
+                log.append({
+                    "symbol": futures_result["symbol"],
+                    "direction": futures_result["direction"],
+                    "entry": futures_result["price"],
+                    "sl": futures_result["sl"],
+                    "tp": futures_result["tp"],
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "status": "open",
+                })
             else:
                 print(f"{symbol}: امتیاز فیوچرز زیر آستانه بود، سیگنالی ارسال نشد.")
         except Exception as e:
@@ -356,6 +486,9 @@ def main():
 
     if not any_signal:
         print("در این اجرا هیچ ارزی شرایط لازم برای سیگنال با کیفیت را نداشت.")
+
+    # ۳. لاگ به‌روزشده رو ذخیره کن (workflow این فایل رو کامیت می‌کند)
+    save_json(LOG_PATH, log)
 
 
 if __name__ == "__main__":
