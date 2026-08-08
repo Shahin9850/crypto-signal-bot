@@ -291,5 +291,41 @@
     "tp": 1.0309771428571428,
     "timestamp": "2026-08-08T08:02:35.948767+00:00",
     "status": "open"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 64993.88,
+    "sl": 64967.84857142857,
+    "tp": 65045.94285714285,
+    "timestamp": "2026-08-08T09:00:06.380858+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 594.49,
+    "sl": 593.752,
+    "tp": 595.966,
+    "timestamp": "2026-08-08T09:00:09.945781+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 74.81,
+    "sl": 74.678,
+    "tp": 75.074,
+    "timestamp": "2026-08-08T09:00:11.939189+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0361,
+    "sl": 1.0380542857142858,
+    "tp": 1.0321914285714286,
+    "timestamp": "2026-08-08T09:00:14.123952+00:00",
+    "status": "open"
   }
 ]
