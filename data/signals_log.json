@@ -1315,7 +1315,8 @@
     "sl": 1918.4894285714288,
     "tp": 1927.9111428571427,
     "timestamp": "2026-08-09T10:04:52.385396+00:00",
-    "status": "open"
+    "status": "loss",
+    "closed_time": "2026-08-09T11:56:25.711503+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -1405,6 +1406,42 @@
     "sl": 1.03796,
     "tp": 1.03148,
     "timestamp": "2026-08-09T11:27:37.903485+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 64964.01,
+    "sl": 64921.89,
+    "tp": 65048.25,
+    "timestamp": "2026-08-09T11:56:39.029823+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 1918.87,
+    "sl": 1916.2437142857143,
+    "tp": 1924.1225714285713,
+    "timestamp": "2026-08-09T11:56:41.399025+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 76.5,
+    "sl": 76.31400000000001,
+    "tp": 76.872,
+    "timestamp": "2026-08-09T11:56:46.033562+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0368,
+    "sl": 1.0387542857142857,
+    "tp": 1.0328914285714286,
+    "timestamp": "2026-08-09T11:56:48.432807+00:00",
     "status": "open"
   }
 ]
