@@ -2765,5 +2765,32 @@
     "tp": 614.992,
     "timestamp": "2026-08-11T16:26:41.398723+00:00",
     "status": "open"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 63535.19,
+    "sl": 63738.35771428572,
+    "tp": 63128.85457142857,
+    "timestamp": "2026-08-11T17:28:34.019575+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1864.37,
+    "sl": 1873.310857142857,
+    "tp": 1846.4882857142857,
+    "timestamp": "2026-08-11T17:28:36.449207+00:00",
+    "status": "open"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 609.84,
+    "sl": 607.5694285714286,
+    "tp": 614.3811428571429,
+    "timestamp": "2026-08-11T17:28:39.318730+00:00",
+    "status": "open"
   }
 ]
