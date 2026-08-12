@@ -3155,5 +3155,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 63515.72,
+    "sl": 63770.930857142856,
+    "tp": 63005.298285714285,
+    "timestamp": "2026-08-12T15:38:47.899243+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
