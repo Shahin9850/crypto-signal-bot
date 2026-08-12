@@ -1,0 +1,9 @@
+{
+  "trend_4h": 30,
+  "trend_1h": 20,
+  "rsi_1h": 15,
+  "macd_1h": 15,
+  "entry_15m": 15,
+  "sr_proximity": 5,
+  "sentiment": 5
+}
