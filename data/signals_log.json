@@ -3148,13 +3148,14 @@
     "sl": 1.0159914285714284,
     "tp": 1.004317142857143,
     "timestamp": "2026-08-12T14:35:44.485083+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-12T21:28:50.441676+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3178,13 +3179,14 @@
     "sl": 63599.165714285715,
     "tp": 63235.12857142857,
     "timestamp": "2026-08-12T18:37:56.909673+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-12T21:28:50.441676+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -3193,13 +3195,14 @@
     "sl": 1.0132657142857142,
     "tp": 1.0061685714285713,
     "timestamp": "2026-08-12T18:38:07.797785+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-12T21:28:50.441676+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3216,5 +3219,50 @@
       "entry_15m": 1
     },
     "closed_time": "2026-08-12T20:41:28.105425+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 63496.64,
+    "sl": 63605.52628571429,
+    "tp": 63278.86742857143,
+    "timestamp": "2026-08-12T21:28:57.326650+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1879.32,
+    "sl": 1884.6642857142856,
+    "tp": 1868.6314285714284,
+    "timestamp": "2026-08-12T21:28:59.799778+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0057,
+    "sl": 1.008357142857143,
+    "tp": 1.0003857142857142,
+    "timestamp": "2026-08-12T21:29:06.816948+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
