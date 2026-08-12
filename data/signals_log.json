@@ -3116,13 +3116,14 @@
     "sl": 76.53542857142858,
     "tp": 77.20914285714287,
     "timestamp": "2026-08-12T10:02:13.094784+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-12T13:24:06.331989+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -3131,12 +3132,13 @@
     "sl": 76.542,
     "tp": 77.226,
     "timestamp": "2026-08-12T11:10:54.673385+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-12T13:24:06.331989+00:00"
   }
 ]
