@@ -3453,13 +3453,14 @@
     "sl": 76.09599999999999,
     "tp": 76.618,
     "timestamp": "2026-08-13T13:36:50.346764+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-13T15:41:18.203777+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -3468,6 +3469,22 @@
     "sl": 76.29342857142856,
     "tp": 77.00314285714286,
     "timestamp": "2026-08-13T14:43:58.783728+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-13T15:41:18.203777+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0065,
+    "sl": 1.0098685714285713,
+    "tp": 0.9997628571428571,
+    "timestamp": "2026-08-13T15:41:33.951505+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
