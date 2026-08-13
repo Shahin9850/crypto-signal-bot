@@ -3372,13 +3372,14 @@
     "sl": 613.3745714285714,
     "tp": 616.9308571428571,
     "timestamp": "2026-08-13T05:56:22.307000+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1,
       "sr_proximity": 1
-    }
+    },
+    "closed_time": "2026-08-13T07:27:53.798635+00:00"
   }
 ]
