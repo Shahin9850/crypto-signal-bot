@@ -3405,13 +3405,14 @@
     "sl": 1885.9871428571428,
     "tp": 1873.9657142857143,
     "timestamp": "2026-08-13T11:11:16.118336+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-13T13:36:41.820884+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3420,13 +3421,14 @@
     "sl": 63580.47314285715,
     "tp": 63270.803714285714,
     "timestamp": "2026-08-13T12:00:19.805002+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-13T13:36:41.820884+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -3435,6 +3437,22 @@
     "sl": 1.0062314285714284,
     "tp": 0.999237142857143,
     "timestamp": "2026-08-13T12:00:29.433465+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-13T13:36:41.820884+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 76.27,
+    "sl": 76.09599999999999,
+    "tp": 76.618,
+    "timestamp": "2026-08-13T13:36:50.346764+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
