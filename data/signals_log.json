@@ -3412,5 +3412,35 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 63477.25,
+    "sl": 63580.47314285715,
+    "tp": 63270.803714285714,
+    "timestamp": "2026-08-13T12:00:19.805002+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0039,
+    "sl": 1.0062314285714284,
+    "tp": 0.999237142857143,
+    "timestamp": "2026-08-13T12:00:29.433465+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
