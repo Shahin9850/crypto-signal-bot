@@ -3565,13 +3565,14 @@
     "sl": 62992.42657142857,
     "tp": 62601.02685714286,
     "timestamp": "2026-08-14T10:42:36.353970+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-14T14:49:27.059170+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -3644,6 +3645,53 @@
     "sl": 62782.20228571428,
     "tp": 62370.65542857143,
     "timestamp": "2026-08-14T13:52:26.171506+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-14T14:49:27.059170+00:00"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1867.65,
+    "sl": 1872.563142857143,
+    "tp": 1857.8237142857142,
+    "timestamp": "2026-08-14T13:52:29.038896+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-14T14:49:27.059170+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0026,
+    "sl": 1.005197142857143,
+    "tp": 0.9974057142857142,
+    "timestamp": "2026-08-14T13:52:35.616234+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 62748.49,
+    "sl": 62898.534571428565,
+    "tp": 62448.40085714286,
+    "timestamp": "2026-08-14T14:49:32.913755+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
@@ -3655,25 +3703,10 @@
   {
     "symbol": "ETHUSDT",
     "direction": "SELL",
-    "entry": 1867.65,
-    "sl": 1872.563142857143,
-    "tp": 1857.8237142857142,
-    "timestamp": "2026-08-14T13:52:29.038896+00:00",
-    "status": "open",
-    "factors": {
-      "trend_4h": 1,
-      "trend_1h": 1,
-      "macd_1h": 1,
-      "entry_15m": 1
-    }
-  },
-  {
-    "symbol": "XRPUSDT",
-    "direction": "SELL",
-    "entry": 1.0026,
-    "sl": 1.005197142857143,
-    "tp": 0.9974057142857142,
-    "timestamp": "2026-08-14T13:52:35.616234+00:00",
+    "entry": 1870.44,
+    "sl": 1875.9934285714287,
+    "tp": 1859.3331428571428,
+    "timestamp": "2026-08-14T14:49:34.904018+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
