@@ -3829,5 +3829,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 610.95,
+    "sl": 610.0465714285715,
+    "tp": 612.7568571428573,
+    "timestamp": "2026-08-15T08:38:24.456564+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
