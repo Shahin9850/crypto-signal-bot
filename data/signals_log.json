@@ -3854,13 +3854,14 @@
     "sl": 610.8468571428571,
     "tp": 613.6162857142857,
     "timestamp": "2026-08-15T09:39:57.937515+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-15T12:52:22.951421+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -3869,13 +3870,14 @@
     "sl": 610.8425714285714,
     "tp": 613.6248571428572,
     "timestamp": "2026-08-15T09:58:48.398163+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-15T12:52:22.951421+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -3900,13 +3902,14 @@
     "sl": 610.5325714285714,
     "tp": 613.2248571428571,
     "timestamp": "2026-08-15T10:51:38.239000+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-15T12:52:22.951421+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -3945,12 +3948,44 @@
     "sl": 611.024,
     "tp": 613.472,
     "timestamp": "2026-08-15T11:59:09.657987+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-15T12:52:22.951421+00:00"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1878.54,
+    "sl": 1879.847142857143,
+    "tp": 1875.9257142857143,
+    "timestamp": "2026-08-15T12:52:31.115931+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0009,
+    "sl": 1.0021342857142856,
+    "tp": 0.9984314285714284,
+    "timestamp": "2026-08-15T12:52:38.243386+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "rsi_1h": 1,
+      "entry_15m": 1,
+      "sr_proximity": 1
     }
   }
 ]
