@@ -3907,5 +3907,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1880.26,
+    "sl": 1881.999142857143,
+    "tp": 1876.7817142857143,
+    "timestamp": "2026-08-15T11:44:23.018659+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
