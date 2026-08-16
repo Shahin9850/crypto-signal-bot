@@ -4208,13 +4208,14 @@
     "sl": 1881.4185714285716,
     "tp": 1878.4228571428573,
     "timestamp": "2026-08-16T10:00:11.474140+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T13:52:44.071190+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -4239,13 +4240,14 @@
     "sl": 1881.3785714285714,
     "tp": 1878.202857142857,
     "timestamp": "2026-08-16T10:32:06.028983+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T13:52:44.071190+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -4286,13 +4288,14 @@
     "sl": 1881.8225714285713,
     "tp": 1878.7548571428572,
     "timestamp": "2026-08-16T10:59:02.199237+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T13:52:44.071190+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -4332,13 +4335,14 @@
     "sl": 1881.3522857142857,
     "tp": 1878.2254285714284,
     "timestamp": "2026-08-16T11:27:25.044845+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T13:52:44.071190+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -4442,6 +4446,21 @@
     "sl": 1.0012514285714287,
     "tp": 0.996597142857143,
     "timestamp": "2026-08-16T12:35:17.818108+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0003,
+    "sl": 1.0014142857142856,
+    "tp": 0.9980714285714286,
+    "timestamp": "2026-08-16T13:52:56.947352+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
