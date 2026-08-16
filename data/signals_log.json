@@ -4047,13 +4047,14 @@
     "sl": 1.0029914285714285,
     "tp": 0.9985171428571431,
     "timestamp": "2026-08-16T01:11:49.678714+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1,
       "sr_proximity": 1
-    }
+    },
+    "closed_time": "2026-08-16T02:34:55.372672+00:00"
   }
 ]
