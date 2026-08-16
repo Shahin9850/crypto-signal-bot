@@ -4064,13 +4064,14 @@
     "sl": 1.0021542857142856,
     "tp": 0.9980914285714284,
     "timestamp": "2026-08-16T05:00:15.322769+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T07:37:36.978702+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -4110,6 +4111,22 @@
     "sl": 1.0014914285714285,
     "tp": 0.9979171428571428,
     "timestamp": "2026-08-16T06:58:56.706437+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-16T07:37:36.978702+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 63061.03,
+    "sl": 63088.264,
+    "tp": 63006.562,
+    "timestamp": "2026-08-16T07:37:41.702975+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
