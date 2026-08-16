@@ -4094,6 +4094,22 @@
     "sl": 1.00148,
     "tp": 0.99824,
     "timestamp": "2026-08-16T06:01:30.405513+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-16T06:58:43.601053+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.0003,
+    "sl": 1.0014914285714285,
+    "tp": 0.9979171428571428,
+    "timestamp": "2026-08-16T06:58:56.706437+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
