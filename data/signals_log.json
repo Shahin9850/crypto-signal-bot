@@ -4543,13 +4543,14 @@
     "sl": 62934.504571428566,
     "tp": 62640.250857142855,
     "timestamp": "2026-08-16T22:29:24.785749+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T23:17:39.801645+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -4588,13 +4589,14 @@
     "sl": 62907.09685714286,
     "tp": 62585.05628571429,
     "timestamp": "2026-08-16T22:50:08.774395+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-16T23:17:39.801645+00:00"
   },
   {
     "symbol": "ETHUSDT",
