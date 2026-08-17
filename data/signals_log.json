@@ -4764,13 +4764,14 @@
     "sl": 1905.0917142857143,
     "tp": 1924.2565714285713,
     "timestamp": "2026-08-17T15:49:42.448230+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-17T17:25:03.287364+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -4779,6 +4780,37 @@
     "sl": 75.90742857142858,
     "tp": 76.63514285714287,
     "timestamp": "2026-08-17T15:49:45.968403+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-17T17:25:03.287364+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 75.97,
+    "sl": 75.71285714285715,
+    "tp": 76.4842857142857,
+    "timestamp": "2026-08-17T16:55:21.942940+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 1910.43,
+    "sl": 1904.1617142857144,
+    "tp": 1922.9665714285716,
+    "timestamp": "2026-08-17T17:25:14.416172+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
@@ -4790,10 +4822,10 @@
   {
     "symbol": "SOLUSDT",
     "direction": "BUY",
-    "entry": 75.97,
-    "sl": 75.71285714285715,
-    "tp": 76.4842857142857,
-    "timestamp": "2026-08-17T16:55:21.942940+00:00",
+    "entry": 75.95,
+    "sl": 75.70400000000001,
+    "tp": 76.44200000000001,
+    "timestamp": "2026-08-17T17:25:18.893270+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
