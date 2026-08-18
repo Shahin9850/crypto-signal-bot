@@ -5311,5 +5311,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 1917.35,
+    "sl": 1914.8025714285714,
+    "tp": 1922.444857142857,
+    "timestamp": "2026-08-18T23:20:16.862358+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
