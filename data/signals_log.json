@@ -5429,5 +5429,21 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 0.9999,
+    "sl": 1.0014514285714287,
+    "tp": 0.9967971428571429,
+    "timestamp": "2026-08-19T05:58:17.802474+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1,
+      "sr_proximity": 1
+    }
   }
 ]
