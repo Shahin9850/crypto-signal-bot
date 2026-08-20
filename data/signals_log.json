@@ -7001,5 +7001,65 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 69651.28,
+    "sl": 69403.20314285714,
+    "tp": 70147.43371428571,
+    "timestamp": "2026-08-20T05:28:34.088002+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2254.99,
+    "sl": 2242.6334285714283,
+    "tp": 2279.7031428571427,
+    "timestamp": "2026-08-20T05:28:36.433878+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 627.51,
+    "sl": 625.4262857142857,
+    "tp": 631.6774285714285,
+    "timestamp": "2026-08-20T05:28:38.829567+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.1079,
+    "sl": 1.1020114285714286,
+    "tp": 1.1196771428571428,
+    "timestamp": "2026-08-20T05:28:43.355258+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
