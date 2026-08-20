@@ -7501,13 +7501,14 @@
     "sl": 1.26402,
     "tp": 1.3374599999999999,
     "timestamp": "2026-08-20T16:42:07.131190+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T17:46:20.053072+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -7546,6 +7547,79 @@
     "sl": 1.2945942857142858,
     "tp": 1.3699114285714287,
     "timestamp": "2026-08-20T17:12:14.786091+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 72719.49,
+    "sl": 72282.20571428572,
+    "tp": 73594.05857142857,
+    "timestamp": "2026-08-20T17:46:29.008047+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2344.48,
+    "sl": 2323.479142857143,
+    "tp": 2386.481714285714,
+    "timestamp": "2026-08-20T17:46:31.469941+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 653.17,
+    "sl": 649.5768571428571,
+    "tp": 660.3562857142857,
+    "timestamp": "2026-08-20T17:46:33.822465+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 87.57,
+    "sl": 87.0102857142857,
+    "tp": 88.68942857142856,
+    "timestamp": "2026-08-20T17:46:35.983200+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.3343,
+    "sl": 1.3097514285714287,
+    "tp": 1.3833971428571428,
+    "timestamp": "2026-08-20T17:46:38.121980+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
