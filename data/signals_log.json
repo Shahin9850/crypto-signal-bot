@@ -7309,13 +7309,14 @@
     "sl": 71231.54628571428,
     "tp": 72518.31742857142,
     "timestamp": "2026-08-20T13:59:17.601632+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T15:17:58.698220+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -7339,13 +7340,14 @@
     "sl": 1.2040771428571428,
     "tp": 1.253345714285714,
     "timestamp": "2026-08-20T13:59:26.625500+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T15:17:58.698220+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -7369,6 +7371,36 @@
     "sl": 1.2188285714285714,
     "tp": 1.277842857142857,
     "timestamp": "2026-08-20T14:44:49.132514+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 72111.05,
+    "sl": 71625.87885714286,
+    "tp": 73081.39228571429,
+    "timestamp": "2026-08-20T15:18:08.586804+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 646.27,
+    "sl": 642.8131428571428,
+    "tp": 653.1837142857142,
+    "timestamp": "2026-08-20T15:18:12.281327+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
