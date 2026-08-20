@@ -6919,13 +6919,14 @@
     "sl": 624.8537142857143,
     "tp": 632.4625714285714,
     "timestamp": "2026-08-20T04:10:41.689094+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T05:59:00.154026+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -6964,13 +6965,14 @@
     "sl": 624.9057142857142,
     "tp": 631.5785714285714,
     "timestamp": "2026-08-20T04:53:39.010719+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T05:59:00.154026+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -7009,13 +7011,14 @@
     "sl": 69403.20314285714,
     "tp": 70147.43371428571,
     "timestamp": "2026-08-20T05:28:34.088002+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-20T05:59:00.154026+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -7039,6 +7042,37 @@
     "sl": 625.4262857142857,
     "tp": 631.6774285714285,
     "timestamp": "2026-08-20T05:28:38.829567+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-20T05:59:00.154026+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.1079,
+    "sl": 1.1020114285714286,
+    "tp": 1.1196771428571428,
+    "timestamp": "2026-08-20T05:28:43.355258+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2248.71,
+    "sl": 2236.842,
+    "tp": 2272.446,
+    "timestamp": "2026-08-20T05:59:20.651465+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
@@ -7050,10 +7084,10 @@
   {
     "symbol": "XRPUSDT",
     "direction": "BUY",
-    "entry": 1.1079,
-    "sl": 1.1020114285714286,
-    "tp": 1.1196771428571428,
-    "timestamp": "2026-08-20T05:28:43.355258+00:00",
+    "entry": 1.1045,
+    "sl": 1.09874,
+    "tp": 1.11602,
+    "timestamp": "2026-08-20T05:59:26.385914+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
