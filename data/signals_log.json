@@ -8663,5 +8663,35 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 680.97,
+    "sl": 677.1437142857143,
+    "tp": 688.6225714285714,
+    "timestamp": "2026-08-21T15:14:43.190499+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.4079,
+    "sl": 1.3851771428571429,
+    "tp": 1.4533457142857142,
+    "timestamp": "2026-08-21T15:14:46.494932+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
