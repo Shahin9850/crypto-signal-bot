@@ -8671,13 +8671,14 @@
     "sl": 677.1437142857143,
     "tp": 688.6225714285714,
     "timestamp": "2026-08-21T15:14:43.190499+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-21T16:31:44.237782+00:00"
   },
   {
     "symbol": "XRPUSDT",
