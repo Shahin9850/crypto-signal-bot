@@ -9038,13 +9038,14 @@
     "sl": 77227.80771428571,
     "tp": 77860.66457142857,
     "timestamp": "2026-08-22T16:49:52.134811+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-22T17:45:51.123154+00:00"
   },
   {
     "symbol": "ETHUSDT",
