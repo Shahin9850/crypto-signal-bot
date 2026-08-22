@@ -9084,13 +9084,14 @@
     "sl": 2423.918857142857,
     "tp": 2449.872285714286,
     "timestamp": "2026-08-22T18:27:28.598047+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-22T18:58:56.044824+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -9129,6 +9130,21 @@
     "sl": 1.4721885714285714,
     "tp": 1.5355228571428572,
     "timestamp": "2026-08-22T18:27:37.847401+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "rsi_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 698.17,
+    "sl": 695.5557142857142,
+    "tp": 703.3985714285714,
+    "timestamp": "2026-08-22T18:59:11.264739+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
