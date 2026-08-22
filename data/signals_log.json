@@ -9008,13 +9008,14 @@
     "sl": 77007.012,
     "tp": 77574.06599999999,
     "timestamp": "2026-08-22T16:21:09.451008+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-22T21:45:48.404865+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -9135,13 +9136,14 @@
     "sl": 1.4721885714285714,
     "tp": 1.5355228571428572,
     "timestamp": "2026-08-22T18:27:37.847401+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-22T21:45:48.404865+00:00"
   },
   {
     "symbol": "BNBUSDT",
