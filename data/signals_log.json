@@ -9023,13 +9023,14 @@
     "sl": 2410.6605714285715,
     "tp": 2438.678857142857,
     "timestamp": "2026-08-22T16:21:11.783815+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-22T19:48:04.612996+00:00"
   },
   {
     "symbol": "BTCUSDT",
