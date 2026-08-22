@@ -8871,5 +8871,50 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 717.35,
+    "sl": 710.684,
+    "tp": 730.682,
+    "timestamp": "2026-08-22T04:05:13.682059+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 96.76,
+    "sl": 95.82742857142857,
+    "tp": 98.62514285714286,
+    "timestamp": "2026-08-22T04:05:16.037924+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.5666,
+    "sl": 1.53642,
+    "tp": 1.62696,
+    "timestamp": "2026-08-22T04:05:18.296369+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
