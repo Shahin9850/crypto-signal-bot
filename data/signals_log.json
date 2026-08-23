@@ -9948,5 +9948,35 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2460.46,
+    "sl": 2446.694285714286,
+    "tp": 2487.9914285714285,
+    "timestamp": "2026-08-23T22:47:42.221800+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.5175,
+    "sl": 1.5006057142857143,
+    "tp": 1.5512885714285716,
+    "timestamp": "2026-08-23T22:47:46.865993+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
