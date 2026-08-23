@@ -9280,13 +9280,14 @@
     "sl": 94.82171428571428,
     "tp": 96.43657142857143,
     "timestamp": "2026-08-23T13:53:58.133578+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T14:49:12.566448+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -9295,13 +9296,14 @@
     "sl": 77213.22228571429,
     "tp": 78075.71542857144,
     "timestamp": "2026-08-23T14:20:57.348514+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T14:49:12.566448+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -9310,13 +9312,14 @@
     "sl": 2449.211142857143,
     "tp": 2492.3777142857143,
     "timestamp": "2026-08-23T14:20:59.481910+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T14:49:12.566448+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -9325,13 +9328,14 @@
     "sl": 695.798,
     "tp": 703.7540000000001,
     "timestamp": "2026-08-23T14:21:01.362750+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T14:49:12.566448+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -9340,6 +9344,22 @@
     "sl": 94.85085714285715,
     "tp": 96.55828571428572,
     "timestamp": "2026-08-23T14:21:03.234758+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-23T14:49:12.566448+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.5144,
+    "sl": 1.490117142857143,
+    "tp": 1.562965714285714,
+    "timestamp": "2026-08-23T14:49:27.979997+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
