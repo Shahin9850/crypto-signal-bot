@@ -9944,13 +9944,14 @@
     "sl": 700.0634285714285,
     "tp": 708.1531428571428,
     "timestamp": "2026-08-23T22:19:47.711880+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T23:45:10.176809+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -10020,13 +10021,14 @@
     "sl": 699.8477142857143,
     "tp": 708.9145714285714,
     "timestamp": "2026-08-23T23:19:28.101985+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-23T23:45:10.176809+00:00"
   },
   {
     "symbol": "SOLUSDT",
