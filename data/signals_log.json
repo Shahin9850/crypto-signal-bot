@@ -9368,5 +9368,35 @@
       "entry_15m": 1
     },
     "closed_time": "2026-08-23T15:20:41.430532+00:00"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 697.33,
+    "sl": 694.0351428571429,
+    "tp": 703.9197142857143,
+    "timestamp": "2026-08-23T15:47:19.442642+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.5093,
+    "sl": 1.4827714285714286,
+    "tp": 1.562357142857143,
+    "timestamp": "2026-08-23T15:47:23.295747+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
