@@ -9702,5 +9702,50 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 77433.97,
+    "sl": 77273.34057142858,
+    "tp": 77755.22885714285,
+    "timestamp": "2026-08-23T20:48:40.711767+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2448.98,
+    "sl": 2440.1857142857143,
+    "tp": 2466.568571428572,
+    "timestamp": "2026-08-23T20:48:42.664879+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 699.99,
+    "sl": 698.154,
+    "tp": 703.662,
+    "timestamp": "2026-08-23T20:48:44.573269+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
