@@ -10100,5 +10100,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-08-24T04:05:13.468060+00:00"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2462.24,
+    "sl": 2450.0942857142854,
+    "tp": 2486.531428571428,
+    "timestamp": "2026-08-24T09:45:03.255115+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
