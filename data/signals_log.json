@@ -10059,5 +10059,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 95.42,
+    "sl": 94.73685714285715,
+    "tp": 96.78628571428573,
+    "timestamp": "2026-08-24T00:00:34.152966+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
