@@ -10142,13 +10142,14 @@
     "sl": 78184.71800000001,
     "tp": 79202.564,
     "timestamp": "2026-08-24T11:43:39.561204+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-24T12:03:57.523222+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -10157,13 +10158,14 @@
     "sl": 2490.1985714285715,
     "tp": 2538.142857142857,
     "timestamp": "2026-08-24T11:43:42.293252+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-24T12:03:57.523222+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -10172,13 +10174,14 @@
     "sl": 703.472,
     "tp": 712.256,
     "timestamp": "2026-08-24T11:43:44.682314+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-24T12:03:57.523222+00:00"
   },
   {
     "symbol": "SOLUSDT",
