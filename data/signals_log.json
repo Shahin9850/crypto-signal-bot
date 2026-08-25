@@ -10542,13 +10542,14 @@
     "sl": 80023.06457142856,
     "tp": 81369.87085714286,
     "timestamp": "2026-08-25T05:05:06.304829+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-25T08:23:00.421163+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -10557,13 +10558,14 @@
     "sl": 2484.9411428571425,
     "tp": 2528.467714285714,
     "timestamp": "2026-08-25T05:05:08.623243+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-08-25T08:23:00.421163+00:00"
   },
   {
     "symbol": "BNBUSDT",
