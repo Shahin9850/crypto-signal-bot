@@ -10734,6 +10734,37 @@
     "sl": 104.13542857142858,
     "tp": 106.33914285714286,
     "timestamp": "2026-08-27T13:48:21.096997+00:00",
+    "status": "win",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-08-27T23:36:15.716384+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 109.73,
+    "sl": 108.91914285714286,
+    "tp": 111.3517142857143,
+    "timestamp": "2026-08-27T23:36:24.181982+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "BUY",
+    "entry": 1.4563,
+    "sl": 1.4490742857142855,
+    "tp": 1.4707514285714285,
+    "timestamp": "2026-08-27T23:36:26.225058+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
