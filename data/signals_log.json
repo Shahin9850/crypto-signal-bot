@@ -10870,5 +10870,35 @@
       "entry_15m": 1
     },
     "closed_time": "2026-08-30T19:27:26.536354+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 79127.05,
+    "sl": 78852.07514285714,
+    "tp": 79676.99971428572,
+    "timestamp": "2026-08-31T19:15:37.614765+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2484.37,
+    "sl": 2472.9262857142858,
+    "tp": 2507.257428571428,
+    "timestamp": "2026-08-31T19:15:40.043772+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
