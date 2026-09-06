@@ -11134,14 +11134,15 @@
     "sl": 79950.30571428571,
     "tp": 80303.38857142857,
     "timestamp": "2026-09-06T05:40:49.925567+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1,
       "sr_proximity": 1
-    }
+    },
+    "closed_time": "2026-09-06T09:40:38.063482+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -11150,13 +11151,14 @@
     "sl": 2512.4742857142855,
     "tp": 2536.4914285714285,
     "timestamp": "2026-09-06T05:40:52.074882+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-06T09:40:38.063482+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -11165,13 +11167,14 @@
     "sl": 105.91085714285714,
     "tp": 108.24828571428571,
     "timestamp": "2026-09-06T05:40:56.562201+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-06T09:40:38.063482+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -11180,12 +11183,13 @@
     "sl": 1.4218457142857142,
     "tp": 1.4403085714285715,
     "timestamp": "2026-09-06T05:40:58.673626+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-06T09:40:38.063482+00:00"
   }
 ]
