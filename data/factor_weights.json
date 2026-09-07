@@ -4,6 +4,6 @@
   "rsi_1h": 5.0,
   "macd_1h": 15,
   "entry_15m": 15,
-  "sr_proximity": 5,
+  "sr_proximity": 5.0,
   "sentiment": 5
 }
