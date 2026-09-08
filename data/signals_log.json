@@ -11289,5 +11289,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-09-08T00:38:42.770032+00:00"
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.3912,
+    "sl": 1.3966942857142857,
+    "tp": 1.3802114285714284,
+    "timestamp": "2026-09-08T05:16:11.251205+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
