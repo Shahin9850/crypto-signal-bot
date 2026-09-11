@@ -11408,13 +11408,14 @@
     "sl": 77369.09342857142,
     "tp": 76585.81314285715,
     "timestamp": "2026-09-10T18:28:12.796386+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-11T01:05:12.140347+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -11439,13 +11440,14 @@
     "sl": 76869.094,
     "tp": 76377.712,
     "timestamp": "2026-09-10T23:10:15.357345+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-11T01:05:12.140347+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -11454,13 +11456,14 @@
     "sl": 99.39628571428571,
     "tp": 98.26742857142857,
     "timestamp": "2026-09-10T23:10:21.263083+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-11T01:05:12.140347+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -11469,12 +11472,13 @@
     "sl": 1.3428028571428572,
     "tp": 1.3253942857142857,
     "timestamp": "2026-09-10T23:10:23.566517+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-11T01:05:12.140347+00:00"
   }
 ]
