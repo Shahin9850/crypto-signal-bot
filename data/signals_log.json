@@ -11569,6 +11569,22 @@
     "sl": 2572.2000000000003,
     "tp": 2619.18,
     "timestamp": "2026-09-14T20:45:08.345892+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-09-14T23:31:54.184332+00:00"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "SELL",
+    "entry": 721.64,
+    "sl": 724.7522857142857,
+    "tp": 715.4154285714286,
+    "timestamp": "2026-09-14T23:32:00.222519+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
