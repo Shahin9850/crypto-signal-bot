@@ -11824,13 +11824,14 @@
     "sl": 110.52885714285713,
     "tp": 114.34228571428571,
     "timestamp": "2026-09-18T16:31:31.172804+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-19T23:19:52.031693+00:00"
   },
   {
     "symbol": "BTCUSDT",
