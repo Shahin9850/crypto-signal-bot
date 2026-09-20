@@ -11793,13 +11793,14 @@
     "sl": 80513.31542857143,
     "tp": 82177.36914285715,
     "timestamp": "2026-09-18T16:31:23.929112+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-09-20T06:40:50.915983+00:00"
   },
   {
     "symbol": "ETHUSDT",
