@@ -12201,5 +12201,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-09-22T22:15:13.688243+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 118.97,
+    "sl": 118.38885714285715,
+    "tp": 120.13228571428571,
+    "timestamp": "2026-09-23T00:39:47.959028+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
