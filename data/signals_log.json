@@ -12321,14 +12321,15 @@
     "sl": 84384.576,
     "tp": 84621.528,
     "timestamp": "2026-09-27T05:34:08.213298+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1,
       "sr_proximity": 1
-    }
+    },
+    "closed_time": "2026-09-27T10:46:36.465683+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -12337,6 +12338,22 @@
     "sl": 2695.3794285714284,
     "tp": 2708.131142857143,
     "timestamp": "2026-09-27T05:34:10.200859+00:00",
+    "status": "win",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-09-27T10:46:36.465683+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 84858.01,
+    "sl": 84706.618,
+    "tp": 85160.794,
+    "timestamp": "2026-09-27T10:46:41.239711+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
