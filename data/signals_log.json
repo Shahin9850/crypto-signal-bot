@@ -12410,5 +12410,20 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 84641.15,
+    "sl": 84421.12999999999,
+    "tp": 85081.18999999999,
+    "timestamp": "2026-10-01T21:22:19.294250+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
