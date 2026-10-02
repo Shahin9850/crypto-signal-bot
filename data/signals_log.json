@@ -12425,5 +12425,35 @@
       "macd_1h": 1,
       "entry_15m": 1
     }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "BUY",
+    "entry": 2708.08,
+    "sl": 2702.043142857143,
+    "tp": 2720.153714285714,
+    "timestamp": "2026-10-02T00:59:48.412051+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 771.61,
+    "sl": 770.3028571428572,
+    "tp": 774.2242857142858,
+    "timestamp": "2026-10-02T00:59:51.845963+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
