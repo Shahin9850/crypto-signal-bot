@@ -12619,5 +12619,35 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-02T18:42:04.319501+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 84822.54,
+    "sl": 84737.88171428572,
+    "tp": 84991.85657142857,
+    "timestamp": "2026-10-03T16:34:54.846369+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "BUY",
+    "entry": 119.67,
+    "sl": 119.42485714285714,
+    "tp": 120.16028571428572,
+    "timestamp": "2026-10-03T16:35:00.779741+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
