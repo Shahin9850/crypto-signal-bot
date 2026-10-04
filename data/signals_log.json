@@ -12659,13 +12659,14 @@
     "sl": 84935.452,
     "tp": 85129.096,
     "timestamp": "2026-10-04T07:46:46.871431+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1,
       "sr_proximity": 1
-    }
+    },
+    "closed_time": "2026-10-04T13:41:38.124616+00:00"
   }
 ]
