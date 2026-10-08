@@ -12812,5 +12812,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-08T01:33:42.553366+00:00"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 2463.26,
+    "sl": 2483.1962857142858,
+    "tp": 2423.3874285714287,
+    "timestamp": "2026-10-08T15:30:18.329955+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
