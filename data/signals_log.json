@@ -12860,5 +12860,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-09T23:30:49.856023+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 82616.68,
+    "sl": 82704.10514285714,
+    "tp": 82441.8297142857,
+    "timestamp": "2026-10-10T02:46:25.554687+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
