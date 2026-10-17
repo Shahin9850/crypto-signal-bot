@@ -13156,13 +13156,14 @@
     "sl": 2431.0851428571427,
     "tp": 2397.679714285714,
     "timestamp": "2026-10-16T21:30:13.417681+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-17T07:47:05.299613+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -13218,13 +13219,14 @@
     "sl": 81544.48771428571,
     "tp": 81240.44457142858,
     "timestamp": "2026-10-17T03:03:37.991352+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-17T07:47:05.299613+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -13233,13 +13235,14 @@
     "sl": 2424.9931428571426,
     "tp": 2411.063714285714,
     "timestamp": "2026-10-17T03:03:40.704485+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-17T07:47:05.299613+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -13248,13 +13251,14 @@
     "sl": 722.0048571428571,
     "tp": 718.2402857142857,
     "timestamp": "2026-10-17T03:03:43.188730+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-17T07:47:05.299613+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -13263,12 +13267,13 @@
     "sl": 1.3082971428571428,
     "tp": 1.2987057142857141,
     "timestamp": "2026-10-17T03:03:47.478118+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-17T07:47:05.299613+00:00"
   }
 ]
