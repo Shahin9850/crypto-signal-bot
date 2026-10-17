@@ -13186,6 +13186,53 @@
     "sl": 81717.41971428572,
     "tp": 81437.46057142859,
     "timestamp": "2026-10-16T23:49:24.981898+00:00",
+    "status": "win",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-10-17T03:03:31.843594+00:00"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "SELL",
+    "entry": 722.34,
+    "sl": 723.5871428571429,
+    "tp": 719.8457142857143,
+    "timestamp": "2026-10-16T23:49:29.126990+00:00",
+    "status": "win",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-10-17T03:03:31.843594+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 81443.14,
+    "sl": 81544.48771428571,
+    "tp": 81240.44457142858,
+    "timestamp": "2026-10-17T03:03:37.991352+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 2420.35,
+    "sl": 2424.9931428571426,
+    "tp": 2411.063714285714,
+    "timestamp": "2026-10-17T03:03:40.704485+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
@@ -13197,10 +13244,25 @@
   {
     "symbol": "BNBUSDT",
     "direction": "SELL",
-    "entry": 722.34,
-    "sl": 723.5871428571429,
-    "tp": 719.8457142857143,
-    "timestamp": "2026-10-16T23:49:29.126990+00:00",
+    "entry": 720.75,
+    "sl": 722.0048571428571,
+    "tp": 718.2402857142857,
+    "timestamp": "2026-10-17T03:03:43.188730+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 1.3051,
+    "sl": 1.3082971428571428,
+    "tp": 1.2987057142857141,
+    "timestamp": "2026-10-17T03:03:47.478118+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
