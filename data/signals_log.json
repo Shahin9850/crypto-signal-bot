@@ -13516,5 +13516,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-20T12:59:39.910695+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "BUY",
+    "entry": 84120.01,
+    "sl": 83824.14485714285,
+    "tp": 84711.74028571427,
+    "timestamp": "2026-10-21T14:41:00.742100+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
