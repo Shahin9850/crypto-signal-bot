@@ -13852,5 +13852,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-25T13:50:02.250449+00:00"
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "BUY",
+    "entry": 743.35,
+    "sl": 741.2362857142857,
+    "tp": 747.5774285714286,
+    "timestamp": "2026-10-25T17:24:15.351520+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
