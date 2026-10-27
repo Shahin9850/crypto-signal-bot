@@ -13900,5 +13900,20 @@
       "entry_15m": 1
     },
     "closed_time": "2026-10-27T01:08:33.007152+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "SELL",
+    "entry": 99.9,
+    "sl": 100.16742857142857,
+    "tp": 99.36514285714286,
+    "timestamp": "2026-10-27T06:16:13.324032+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
   }
 ]
