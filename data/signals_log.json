@@ -13956,13 +13956,14 @@
     "sl": 77099.71685714285,
     "tp": 76158.56628571429,
     "timestamp": "2026-10-30T14:15:08.144247+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-10-30T19:27:23.350969+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -13971,6 +13972,22 @@
     "sl": 95.11942857142857,
     "tp": 93.29114285714286,
     "timestamp": "2026-10-30T14:15:12.656612+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-10-30T19:27:23.350969+00:00"
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "SELL",
+    "entry": 94.54,
+    "sl": 95.17342857142857,
+    "tp": 93.27314285714287,
+    "timestamp": "2026-10-30T19:27:31.366162+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
