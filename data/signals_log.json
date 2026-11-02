@@ -14052,13 +14052,14 @@
     "sl": 77962.50742857144,
     "tp": 77636.89514285715,
     "timestamp": "2026-11-01T22:52:17.602365+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-02T02:06:22.725704+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -14067,13 +14068,14 @@
     "sl": 707.8877142857143,
     "tp": 704.5345714285713,
     "timestamp": "2026-11-01T22:52:21.988217+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-02T02:06:22.725704+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -14082,13 +14084,14 @@
     "sl": 94.30199999999999,
     "tp": 93.276,
     "timestamp": "2026-11-01T22:52:24.341392+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-02T02:06:22.725704+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -14097,12 +14100,13 @@
     "sl": 1.2497514285714284,
     "tp": 1.2405971428571427,
     "timestamp": "2026-11-01T22:52:26.690107+00:00",
-    "status": "open",
+    "status": "loss",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-02T02:06:22.725704+00:00"
   }
 ]
