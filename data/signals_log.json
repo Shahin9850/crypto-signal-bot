@@ -14741,13 +14741,14 @@
     "sl": 72411.0682857143,
     "tp": 70859.92342857143,
     "timestamp": "2026-11-12T16:16:47.739979+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-13T02:46:55.111536+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -14771,13 +14772,14 @@
     "sl": 662.3405714285714,
     "tp": 649.0488571428572,
     "timestamp": "2026-11-12T16:16:51.518396+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-13T02:46:55.111536+00:00"
   },
   {
     "symbol": "XRPUSDT",
