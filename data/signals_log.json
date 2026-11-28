@@ -15285,6 +15285,38 @@
     "sl": 59968.65942857143,
     "tp": 59551.30114285714,
     "timestamp": "2026-11-27T22:50:32.332317+00:00",
+    "status": "loss",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-11-28T04:30:53.798642+00:00"
+  },
+  {
+    "symbol": "BTCUSDT",
+    "direction": "SELL",
+    "entry": 59992.1,
+    "sl": 60107.72085714286,
+    "tp": 59760.85828571428,
+    "timestamp": "2026-11-28T04:30:57.466655+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "rsi_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1664.12,
+    "sl": 1667.7954285714286,
+    "tp": 1656.7691428571427,
+    "timestamp": "2026-11-28T04:30:59.730233+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
