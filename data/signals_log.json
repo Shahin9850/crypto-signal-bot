@@ -15301,14 +15301,15 @@
     "sl": 60107.72085714286,
     "tp": 59760.85828571428,
     "timestamp": "2026-11-28T04:30:57.466655+00:00",
-    "status": "open",
+    "status": "win",
     "factors": {
       "trend_4h": 1,
       "trend_1h": 1,
       "rsi_1h": 1,
       "macd_1h": 1,
       "entry_15m": 1
-    }
+    },
+    "closed_time": "2026-11-28T13:37:57.402327+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -15317,6 +15318,67 @@
     "sl": 1667.7954285714286,
     "tp": 1656.7691428571427,
     "timestamp": "2026-11-28T04:30:59.730233+00:00",
+    "status": "win",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    },
+    "closed_time": "2026-11-28T13:37:57.402327+00:00"
+  },
+  {
+    "symbol": "ETHUSDT",
+    "direction": "SELL",
+    "entry": 1643.8,
+    "sl": 1649.548857142857,
+    "tp": 1632.3022857142857,
+    "timestamp": "2026-11-28T13:38:03.771015+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "BNBUSDT",
+    "direction": "SELL",
+    "entry": 550.27,
+    "sl": 551.7725714285714,
+    "tp": 547.2648571428572,
+    "timestamp": "2026-11-28T13:38:06.031921+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "SOLUSDT",
+    "direction": "SELL",
+    "entry": 70.47,
+    "sl": 70.75028571428571,
+    "tp": 69.90942857142856,
+    "timestamp": "2026-11-28T13:38:08.293984+00:00",
+    "status": "open",
+    "factors": {
+      "trend_4h": 1,
+      "trend_1h": 1,
+      "macd_1h": 1,
+      "entry_15m": 1
+    }
+  },
+  {
+    "symbol": "XRPUSDT",
+    "direction": "SELL",
+    "entry": 0.9373,
+    "sl": 0.9402657142857143,
+    "tp": 0.9313685714285714,
+    "timestamp": "2026-11-28T13:38:10.560254+00:00",
     "status": "open",
     "factors": {
       "trend_4h": 1,
